@@ -2,6 +2,7 @@ package tests;
 
 import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.*;
+import readProperties.ConfigProvider;
 
 public class FirstJUnitTest {
 
@@ -27,7 +28,7 @@ public class FirstJUnitTest {
 
     @Test
     void textTest() {
-        System.out.println("        Это первый тест!");
+        System.out.println(ConfigProvider.URL);
     }
 
     @Test
