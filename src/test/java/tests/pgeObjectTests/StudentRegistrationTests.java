@@ -1,18 +1,20 @@
 package tests.pgeObjectTests;
 
 import com.codeborne.selenide.Configuration;
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import pages.components.StudentRegistrationPage;
 
 public class StudentRegistrationTests {
+    Faker faker = new Faker();
     private StudentRegistrationPage registrationPage = new StudentRegistrationPage();
     private String
-            firstName = "Name",
-            lastName = "Lastname",
-            email = "test@mail.ru",
+            firstName = faker.name().firstName(),
+            lastName = faker.name().lastName(),
+            email = faker.internet().emailAddress(),
             gender = "Male",
-            mobileNumber = "0123456789",
+            mobileNumber = faker.phoneNumber().phoneNumber(),
             day = "1",
             dayCheck = "01",
             month = "January",
